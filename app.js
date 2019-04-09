@@ -2,16 +2,16 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var pike = {
+var firstAndPike = {
   
-  minCustomer: 23,
-  maxCustomer: 65,
+  minimumCustomer: 23,
+  maximumCustomer: 65,
   avgCookiePerHr: 6.3,
-  id: 'locPike',
+  id: 'loc-first-and-firstAndPike',
   cookiesPerHour: [],  
   customers: function(){
     for(var i = 0; i < hours.length; i++){
-      pike.cookiesPerHour.push(Math.ceil(pike.getHourlyCustomer(26, 65)));
+      firstAndPike.cookiesPerHour.push(Math.ceil(firstAndPike.getHourlyCustomer(26, 65)));
     }
   },
   getHourlyCustomer: function (min, max){
@@ -22,28 +22,28 @@ var pike = {
 
     for(var i = 0; i<hours.length; i++) {
       // Josh - 1 - getting a reference to a part I want to change
-      var referencelUl = document.getElementById(this.id);
+      var referenceUl = document.getElementById(this.id);
   
       //Josh - 2 - Creating the new Element
       var newElement = document.createElement('li');
-      newElement.textContent = `In ${hours[i]}, we sold ${pike.cookiesPerHour[i]} cookies`;
+      newElement.textContent = `In ${hours[i]}, we sold ${firstAndPike.cookiesPerHour[i]} cookies`;
   
-      //Josh - Add the element to your reference
-      referencelUl.append(newElement);
+      //Josh - Add the element to the DOM
+      referenceUl.append(newElement);
     }       
   }
 };
 
-pike.getHourlyCustomer();
-pike.customers();
-pike.render();
+firstAndPike.getHourlyCustomer();
+firstAndPike.customers();
+firstAndPike.render();
 
 
 var seatac = {    
-  minCustomer: 23,
-  maxCustomer: 65,
+  minimumCustomer: 23,
+  maximumCustomer: 65,
   avgCookiePerHr: 6.3,
-  id: 'locSeatac',
+  id: 'loc-seatac',
   cookiesPerHour: [],  
   customers: function(){
     for(var i = 0; i < hours.length; i++){
@@ -58,14 +58,14 @@ var seatac = {
   
     for(var i = 0; i<hours.length; i++) {
       // Josh - 1 - getting a reference to a part I want to change
-      var referencelUl = document.getElementById(this.id);
+      var referenceUl = document.getElementById(this.id);
     
       //Josh - 2 - Creating the new Element
       var newElement = document.createElement('li');
       newElement.textContent = `In ${hours[i]}, we sold ${seatac.cookiesPerHour[i]} cookies`;
     
-      //Josh - Add the element to your reference
-      referencelUl.append(newElement);
+      //Josh - Add the element to the DOM
+      referenceUl.append(newElement);
     }            
   }
 };
@@ -76,10 +76,10 @@ seatac.render();
 
 
 var seaCenter = {      
-  minCustomer: 23,
-  maxCustomer: 65,
+  minimumCustomer: 23,
+  maximumCustomer: 65,
   avgCookiePerHr: 6.3,
-  id: 'locSeaCenter',
+  id: 'loc-seattle-center',
   cookiesPerHour: [],  
   customers: function(){
     for(var i = 0; i < hours.length; i++){
@@ -94,14 +94,14 @@ var seaCenter = {
   
     for(var i = 0; i<hours.length; i++) {
       // Josh - 1 - getting a reference to a part I want to change
-      var referencelUl = document.getElementById(this.id);
+      var referenceUl = document.getElementById(this.id);
     
       //Josh - 2 - Creating the new Element
       var newElement = document.createElement('li');
       newElement.textContent = `In ${hours[i]}, we sold ${seaCenter.cookiesPerHour[i]} cookies`;
     
-      //Josh - Add the element to your reference
-      referencelUl.append(newElement);
+      //Josh - Add the element to the DOM
+      referenceUl.append(newElement);
     }  
   }
 };
@@ -113,48 +113,48 @@ seaCenter.render();
 
 
 
-var capHill = {      
-  minCustomer: 23,
-  maxCustomer: 65,
+var capitolHill = {      
+  minimumCustomer: 23,
+  maximumCustomer: 65,
   avgCookiePerHr: 6.3,
-  id: 'locCapHill',
+  id: 'loc-capitol-hill',
   cookiesPerHour: [],  
   customers: function(){
     for(var i = 0; i < hours.length; i++){
-      capHill.cookiesPerHour.push(Math.ceil(capHill.getHourlyCustomer(26, 65)));
+      capitolHill.cookiesPerHour.push(Math.ceil(capitolHill.getHourlyCustomer(26, 65)));
     }
   },
   getHourlyCustomer: function (min, max){
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
   },
       
   render: function() {
   
     for(var i = 0; i<hours.length; i++) {
       // Josh - 1 - getting a reference to a part I want to change
-      var referencelUl = document.getElementById(this.id);
+      var referenceUl = document.getElementById(this.id);
     
       //Josh - 2 - Creating the new Element
       var newElement = document.createElement('li');
-      newElement.textContent = `In ${hours[i]}, we sold ${capHill.cookiesPerHour[i]} cookies`;
+      newElement.textContent = `In ${hours[i]}, we sold ${capitolHill.cookiesPerHour[i]} cookies`;
     
-      //Josh - Add the element to your reference
-      referencelUl.append(newElement);
+      //Josh - Add the element to the DOM
+      referenceUl.append(newElement);
     }
   }
 };
   
-capHill.getHourlyCustomer();
-capHill.customers();
-capHill.render();
+capitolHill.getHourlyCustomer();
+capitolHill.customers();
+capitolHill.render();
   
 
 
 var alki = {    
-  minCustomer: 23,
-  maxCustomer: 65,
+  minimumCustomer: 23,
+  maximumCustomer: 65,
   avgCookiePerHr: 6.3,
-  id: 'locAlki',
+  id: 'loc-alki',
   cookiesPerHour: [],  
   customers: function(){
     for(var i = 0; i < hours.length; i++){
@@ -169,14 +169,14 @@ var alki = {
   
     for(var i = 0; i<hours.length; i++) {
       // Josh - 1 - getting a reference to a part I want to change
-      var referencelUl = document.getElementById(this.id);
+      var referenceUl = document.getElementById(this.id);
     
       //Josh - 2 - Creating the new Element
       var newElement = document.createElement('li');
       newElement.textContent = `In ${hours[i]}, we sold ${alki.cookiesPerHour[i]} cookies`;
     
-      //Josh - Add the element to your reference
-      referencelUl.append(newElement);
+      //Josh - Add the element to the DOM
+      referenceUl.append(newElement);
     }                
   }
 };
