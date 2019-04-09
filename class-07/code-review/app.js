@@ -65,3 +65,89 @@ var firstAndPike = {
 };
 
 firstAndPike.render();
+
+//--------------------------------------------------------------------------------------
+// TABLES
+//--------------------------------------------------------------------------------------
+function Dog(name, age, wasStray) { // Vinicio - this will be a store for you
+  console.log('I AM A CONSTRUCTOR, ALSO, KALI IS CUTE');
+  // Vinicio - when we use this inside a constructor function, we are talking about the new
+  // object we are creating (un-initialized object)
+
+  // Vinicio - Properties
+  this.name = name;
+  this.age = age;
+  this.wasStray = wasStray;
+
+  // Vinicio - Methods
+  this.run = function() {
+    console.log(`${name} runs like the wind`);
+  };
+  this.bark =  function() {
+    console.log('WOOF');
+  };
+}
+
+Dog.prototype.sayHi = function() {
+    this.bark();
+    console.log(`Hello, I'm ${this.name}, and I am ${this.age} old`);
+    this.run();
+}
+
+Dog.prototype.render = function() {
+  // Vinicio - this is going to render one row of the table
+
+  // 1 - Create the row
+  var tr = document.createElement('tr');
+  //--------------------------------------------------------------------------------------
+  // 2 - Create the entire row - In you code, this has to be a LOOP
+  //--------------------------------------------------------------------------------------
+  var tdName = document.createElement('td');
+  tdName.textContent = this.name;
+  tr.append(tdName); // Vinicio - I'm appending this to the row, not to the dom
+  //--------------------------------------------------------------------------------------
+  var tdAge = document.createElement('td');
+  tdAge.textContent = this.age;
+  tr.append(tdAge); // Vinicio - I'm appending this to the row, not to the dom
+  //--------------------------------------------------------------------------------------
+  var tdStray = document.createElement('td');
+  tdStray.textContent = this.wasStray;
+  tr.append(tdStray); // Vinicio - I'm appending this to the row, not to the dom
+  //--------------------------------------------------------------------------------------
+
+  // VINICIO - BEFORE APPENDING A SINGLE DOG I WANT TO ADD HIS/HER TOTAL
+
+  var referenceTable = document.getElementById('dog-table');
+  referenceTable.append(tr);
+}
+
+function renderHeader() {
+  var headings = ['Name', 'Age', 'Was Stray'];
+
+  var tr = document.createElement('tr'); // vinicio - always a start
+
+  for(var i = 0; i < headings.length; i++) { 
+    // Vinicio - this loop will be very similar to the one you need for your cookies
+    var th = document.createElement('th');
+    th.textContent = headings[i];
+    tr.append(th); 
+  }
+
+  var referenceTable = document.getElementById('dog-table'); // vinicio - always the end
+  referenceTable.append(tr);
+}
+
+var kali = new Dog('kali', 2, true);
+var gary = new Dog('gary', 3, false);
+var odin = new Dog('odin', 1, false);
+var charlotte = new Dog('charlotte', 1, false);
+
+var allDogs = [kali, gary, odin, charlotte];// Vinicio - Hint hint wink wink ;)
+
+
+renderHeader();
+for(var i = 0; i < allDogs.length; i++) {
+  allDogs[i].render();
+}
+
+// VINICIO - AFTER YOU RENDER ALL THE DOGS, YOU CAN RENDER THE FINAL ROW
