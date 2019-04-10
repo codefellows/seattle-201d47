@@ -78,6 +78,7 @@ function Dog(name, age, wasStray) { // Vinicio - this will be a store for you
   this.name = name;
   this.age = age;
   this.wasStray = wasStray;
+  this.magicalNumbers = [1,2,3];
 
   // Vinicio - Methods
   this.run = function() {
@@ -151,3 +152,17 @@ for(var i = 0; i < allDogs.length; i++) {
 }
 
 // VINICIO - AFTER YOU RENDER ALL THE DOGS, YOU CAN RENDER THE FINAL ROW
+
+// Option 1 : Make a function
+// Option 2 : Use a loop
+
+for(var c = 0;c < 3 ;c++) { // Vinicio - fix the for loop condition
+  var columnSum = 0;
+
+  for(var i = 0; i < allDogs.length; i++) { // Vinicio - loop over all the dogs
+    // console.log(allDogs[i].name);
+    // console.log(allDogs[i].magicalNumbers[c]);
+    columnSum += allDogs[i].magicalNumbers[c];
+  }
+  console.log(`The sum for column ${c} is ${columnSum}`);
+}
