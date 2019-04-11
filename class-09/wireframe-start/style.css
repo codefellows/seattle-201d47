@@ -1,0 +1,32 @@
+body {
+  width: 960px;
+}
+
+header {
+  /* Add your code here :) */
+}
+
+main {
+  /* Add your code here :) */
+}
+
+nav {
+  /* Add your code here :) */
+  width: 100%;
+  background-color: #444;
+}
+
+nav img {
+  display: inline-block;
+}
+
+nav ul {
+  display: inline-block;
+}
+
+nav ul li {
+  display: inline-block;
+  color: #999;
+  line-height: 70px;
+  padding: 0 34px;
+}
