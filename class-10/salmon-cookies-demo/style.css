@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+table.gray {
+  background-color: gainsboro;
+  color: black;
+}
+
+table.aqua {
+  background-color: aqua;
+  color: black;
+}
+
+table.aqua td {
+  color: red;
+}
+
+#cascade {
+  color: yellow;
+}
